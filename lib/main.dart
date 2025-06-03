@@ -38,6 +38,35 @@ class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
 
+  /// Validator for the username
+  String? _usernameValidator(String? username) {
+    return _validateString(username) ? null : 'Invalid username';
+  }
+
+  /// Validator for the password
+  String? _passwordValidator(String? password) {
+    return _validateString(password) ? null : 'Invalid password';
+  }
+
+  /// Returns [true] if the string is valid. Returns [false] otherwise
+  ///
+  /// In this context, [valid] means that the string is neither [null] nor [empty]
+  bool _validateString(String? string) {
+    return string?.isNotEmpty ?? false;
+  }
+
+  void _sendForms() {
+    if (_formsKey.currentState!.validate()) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Logged in successfully')));
+    } else {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Invalid credentials')));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,18 +81,23 @@ class _LoginPageState extends State<LoginPage> {
             ),
 
             Padding(
-              padding: const EdgeInsets.all(60.0),
+              padding: const EdgeInsets.all(45.0),
               child: Column(
                 children: [
+                  /// Form to validate the inputs
                   Form(
                     key: _formsKey,
+
+                    /// Text form fields
                     child: Column(
                       children: [
                         /// Username text field
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 20),
                           child: TextFormField(
-                            onTapUpOutside: (_) => FocusScope.of(context).unfocus(),
+                            onTapUpOutside:
+                                (_) => FocusScope.of(context).unfocus(),
+                            validator: _usernameValidator,
                             controller: _usernameController,
                             decoration: InputDecoration(
                               hintText: 'Username',
@@ -76,8 +110,10 @@ class _LoginPageState extends State<LoginPage> {
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 20),
                           child: TextFormField(
-                            onTapUpOutside: (_) => FocusScope.of(context).unfocus(),
+                            onTapUpOutside:
+                                (_) => FocusScope.of(context).unfocus(),
                             controller: _passwordController,
+                            validator: _passwordValidator,
                             decoration: InputDecoration(
                               hintText: 'Password',
                               prefixIcon: Icon(Icons.lock_outlined),
@@ -112,7 +148,6 @@ class _LoginPageState extends State<LoginPage> {
                   Padding(
                     padding: const EdgeInsets.only(top: 45),
                     child: InkWell(
-                      onTap: null,
                       child: Ink(
                         decoration: BoxDecoration(color: Colors.black),
                         width: 175,
