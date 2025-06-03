@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// This is a login page that has features such as validation, alignment, InkWell, etc.
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -30,6 +31,7 @@ class _LoginPageState extends State<LoginPage> {
     return string?.isNotEmpty ?? false;
   }
 
+  /// Validates the form state and shows a feedback snackbar
   void _sendForms() {
     if (_formsKey.currentState!.validate()) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -47,6 +49,7 @@ class _LoginPageState extends State<LoginPage> {
       );
     }
 
+    /// Clears the input texts
     _usernameController.clear();
     _passwordController.clear();
   }
@@ -108,6 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
 
+                  /// Register labels
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
