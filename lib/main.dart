@@ -85,7 +85,26 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                     ],
-                  )
+                  ),
+
+                  /// Login button
+                  Padding(
+                    padding: const EdgeInsets.only(top: 45),
+                    child: InkWell(
+                      onTap: null,
+                      child: Ink(
+                        decoration: BoxDecoration(color: Colors.black),
+                        width: 175,
+                        height: 60,
+                        child: Center(
+                          child: Text(
+                            'LOGIN',
+                            style: TextStyle(color: Colors.white, fontSize: 22),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
