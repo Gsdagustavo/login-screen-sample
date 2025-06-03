@@ -71,6 +71,9 @@ class _LoginPageState extends State<LoginPage> {
         ),
       );
     }
+
+    _usernameController.clear();
+    _passwordController.clear();
   }
 
   @override
