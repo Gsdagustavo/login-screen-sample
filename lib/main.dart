@@ -33,6 +33,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _formsKey = GlobalKey<FormState>();
+
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
 
@@ -53,27 +55,34 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.all(60.0),
               child: Column(
                 children: [
-                  /// Username text field
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 20),
-                    child: TextField(
-                      controller: _usernameController,
-                      decoration: InputDecoration(
-                        hintText: 'Username',
-                        prefixIcon: Icon(Icons.person_outline),
-                      ),
-                    ),
-                  ),
+                  Form(
+                    key: _formsKey,
+                    child: Column(
+                      children: [
+                        /// Username text field
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 20),
+                          child: TextFormField(
+                            controller: _usernameController,
+                            decoration: InputDecoration(
+                              hintText: 'Username',
+                              prefixIcon: Icon(Icons.person_outline),
+                            ),
+                          ),
+                        ),
 
-                  /// Password text field
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 20),
-                    child: TextField(
-                      controller: _passwordController,
-                      decoration: InputDecoration(
-                        hintText: 'Password',
-                        prefixIcon: Icon(Icons.lock_outlined),
-                      ),
+                        /// Password text field
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 20),
+                          child: TextFormField(
+                            controller: _passwordController,
+                            decoration: InputDecoration(
+                              hintText: 'Password',
+                              prefixIcon: Icon(Icons.lock_outlined),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
 
