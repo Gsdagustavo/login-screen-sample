@@ -63,6 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 20),
                           child: TextFormField(
+                            onTapUpOutside: (_) => FocusScope.of(context).unfocus(),
                             controller: _usernameController,
                             decoration: InputDecoration(
                               hintText: 'Username',
@@ -75,6 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 20),
                           child: TextFormField(
+                            onTapUpOutside: (_) => FocusScope.of(context).unfocus(),
                             controller: _passwordController,
                             decoration: InputDecoration(
                               hintText: 'Password',
