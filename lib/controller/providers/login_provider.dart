@@ -24,7 +24,7 @@ class LoginProvider with ChangeNotifier {
   }
 
   /// Validates the form state and shows a feedback snackbar
-  void _sendForms(BuildContext context) {
+  void sendForms(BuildContext context) {
     if (formsKey.currentState!.validate()) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(

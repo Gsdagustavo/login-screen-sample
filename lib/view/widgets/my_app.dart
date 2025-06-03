@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:login_screen/controller/providers/login_provider.dart';
+import 'package:provider/provider.dart';
 
 import '../pages/login_page.dart';
 
@@ -16,7 +18,13 @@ class MyApp extends StatelessWidget {
       /// Defines the default theme data
       theme: ThemeData(brightness: Brightness.light),
 
-      routes: {'/loginPage': (_) => const LoginPage()},
+      routes: {
+        '/loginPage':
+            (_) => ChangeNotifierProvider(
+              create: (context) => LoginProvider(),
+              child: const LoginPage(),
+            ),
+      },
       initialRoute: '/loginPage',
     );
   }
