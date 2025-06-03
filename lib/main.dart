@@ -30,6 +30,19 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('Hello World!')));
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            /// Sign in text
+            Text(
+              'SIGN IN',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
