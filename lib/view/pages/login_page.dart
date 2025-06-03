@@ -59,6 +59,9 @@ class LoginPage extends StatelessWidget {
                                   hintText: 'Password',
                                   prefixIcon: Icon(Icons.lock_outlined),
                                 ),
+
+                                /// Hides the text
+                                obscureText: true,
                               ),
                             ),
                           ],
