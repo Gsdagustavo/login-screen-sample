@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
 class LoginProvider with ChangeNotifier {
-  final _formsKey = GlobalKey<FormState>();
+  final formsKey = GlobalKey<FormState>();
 
-  final _usernameController = TextEditingController();
-  final _passwordController = TextEditingController();
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
 
   /// Validator for the username
-  String? _usernameValidator(String? username) {
+  String? usernameValidator(String? username) {
     return _validateString(username) ? null : 'Invalid username';
   }
 
   /// Validator for the password
-  String? _passwordValidator(String? password) {
+  String? passwordValidator(String? password) {
     return _validateString(password) ? null : 'Invalid password';
   }
 
@@ -25,7 +25,7 @@ class LoginProvider with ChangeNotifier {
 
   /// Validates the form state and shows a feedback snackbar
   void _sendForms(BuildContext context) {
-    if (_formsKey.currentState!.validate()) {
+    if (formsKey.currentState!.validate()) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Logged in successfully'),
@@ -42,7 +42,7 @@ class LoginProvider with ChangeNotifier {
     }
 
     /// Clears the input texts
-    _usernameController.clear();
-    _passwordController.clear();
+    usernameController.clear();
+    passwordController.clear();
   }
 }
