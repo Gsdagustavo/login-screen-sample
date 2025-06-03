@@ -40,6 +40,21 @@ class LoginPage extends StatelessWidget {
               'SIGN IN',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
             ),
+
+            Padding(
+              padding: const EdgeInsets.all(60.0),
+              child: Column(
+                children: [
+                  /// Username text field
+                  TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Username',
+                      prefixIcon: Icon(Icons.person_outline),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
