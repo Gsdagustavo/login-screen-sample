@@ -66,6 +66,26 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                   ),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      /// "Don't have an account?" text
+                      Text('Don\'t have an account?'),
+
+                      /// "Register Here" text
+                      TextButton(
+                        onPressed: null,
+                        child: Text(
+                          'Register Here',
+                          style: TextStyle(
+                            color: Colors.deepPurple,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
