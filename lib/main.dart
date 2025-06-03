@@ -57,13 +57,19 @@ class _LoginPageState extends State<LoginPage> {
 
   void _sendForms() {
     if (_formsKey.currentState!.validate()) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('Logged in successfully')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Logged in successfully'),
+          backgroundColor: Colors.green,
+        ),
+      );
     } else {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('Invalid credentials')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Invalid credentials'),
+          backgroundColor: Colors.red,
+        ),
+      );
     }
   }
 
