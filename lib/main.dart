@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(brightness: Brightness.light),
 
       routes: {'/loginPage': (_) => const LoginPage()},
+      initialRoute: '/loginPage',
     );
   }
 }
