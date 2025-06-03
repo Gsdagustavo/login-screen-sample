@@ -46,10 +46,24 @@ class LoginPage extends StatelessWidget {
               child: Column(
                 children: [
                   /// Username text field
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Username',
-                      prefixIcon: Icon(Icons.person_outline),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 20),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Username',
+                        prefixIcon: Icon(Icons.person_outline),
+                      ),
+                    ),
+                  ),
+
+                  /// Password text field
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 20),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Password',
+                        prefixIcon: Icon(Icons.lock_outlined),
+                      ),
                     ),
                   ),
                 ],
