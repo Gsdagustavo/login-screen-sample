@@ -154,6 +154,7 @@ class _LoginPageState extends State<LoginPage> {
                   Padding(
                     padding: const EdgeInsets.only(top: 45),
                     child: InkWell(
+                      onTap: _sendForms,
                       child: Ink(
                         decoration: BoxDecoration(color: Colors.black),
                         width: 175,
